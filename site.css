@@ -1,4 +1,4 @@
-/* NizBot v0.2.2: the consumer face. Very few words, very big; one idea per screen; one rendered robot per theme in the hero, headline in its empty side.
+/* NizBot v0.2.1: the consumer face. Very few words, very big, centred; one idea per screen; a lit object instead of a product shot.
    The look follows the visitor's own system setting: light by default, dark under prefers-color-scheme: dark. No script, no clock. */
 :root{
   --ground:#F5F5F7; --ground2:#FFFFFF; --text:#1D1D1F; --muted:#6E6E73; --hairline:#D2D2D7; --accent:#0A84A8;
@@ -20,15 +20,7 @@ a:hover{text-decoration:underline;text-underline-offset:4px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
 .screen{min-height:86vh;min-height:86svh;display:grid;place-content:center;justify-items:center;gap:18px;padding:64px max(20px,env(safe-area-inset-left,0px)) 64px max(20px,env(safe-area-inset-right,0px))}
 .hero{min-height:100vh;min-height:100svh;gap:10px}
-.hero{position:relative;isolation:isolate;overflow:hidden;place-content:center start;justify-items:start;text-align:left;padding-left:max(7vw,20px)}
-.backdrop img{position:absolute;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;object-position:68% 55%;-webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent);mask-image:linear-gradient(to bottom,#000 78%,transparent)}
-.herotext{display:grid;gap:10px;max-width:46vw}
-.hero h1{font-size:clamp(3.4rem,9vw,8rem)}
-@media (max-width:700px){
-  .hero{align-content:start;padding-top:14svh}
-  .herotext{max-width:none}
-  .backdrop img{object-position:62% 62%}
-}
+.object{height:min(44vh,400px);width:auto;max-width:72vw;margin-bottom:6px}
 h1{margin:0;font:700 clamp(3.4rem,13vw,9.5rem)/.95 var(--display);letter-spacing:-.045em}
 .line{margin:0;font:500 clamp(1.25rem,3.4vw,2.2rem)/1.2 var(--display);letter-spacing:-.015em;color:var(--muted)}
 .big{margin:0;max-width:16ch;font:700 clamp(2.4rem,8vw,6rem)/1 var(--display);letter-spacing:-.04em;text-wrap:balance}
@@ -40,9 +32,9 @@ h1{margin:0;font:700 clamp(3.4rem,13vw,9.5rem)/.95 var(--display);letter-spacing
 .foot{display:flex;flex-direction:column;align-items:center;gap:6px;padding:28px 20px 36px;border-top:1px solid var(--hairline);font:400 .78rem/1.6 var(--display);color:var(--muted)}
 .foot a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 @media (prefers-reduced-motion:no-preference){
-  .backdrop img{animation:fade 1.4s ease-out both}
+  .object{animation:float 1.6s cubic-bezier(.2,.7,.1,1) both}
   .rise{animation:rise 1.2s cubic-bezier(.2,.7,.1,1) both}
   .r1{animation-delay:.5s} .r2{animation-delay:.9s}
   @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-  @keyframes fade{from{opacity:0}to{opacity:1}}
+  @keyframes float{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:none}}
 }
