@@ -1,0 +1,32 @@
+/* The e-bike guide: same tokens as the landing page; a table on wide screens, one card per bike on a phone. */
+.ghead{max-width:1180px;margin:0 auto;padding:22px 20px 0;text-align:left}
+.ghead .home{font:700 1.4rem/1 var(--display);letter-spacing:-.03em;color:var(--text);text-decoration:none}
+.guide{max-width:1180px;margin:0 auto;padding:24px 20px 64px;text-align:left;display:grid;gap:18px}
+.disclosure{margin:0;padding:12px 16px;border:1px solid var(--hairline);border-radius:12px;color:var(--text);font-size:.98rem}
+.guide h1{margin:12px 0 0;font:700 clamp(2.4rem,7vw,4.6rem)/1 var(--display);letter-spacing:-.04em}
+.lede{margin:0;max-width:62ch;font-size:1.15rem;color:var(--text)}
+.note{margin:0;max-width:70ch;color:var(--muted);font-size:.98rem}
+.tablewrap{overflow-x:auto;border:1px solid var(--hairline);border-radius:14px}
+.guide table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:900px}
+.guide th,.guide td{text-align:left;vertical-align:top;padding:12px 12px;border-bottom:1px solid var(--hairline)}
+.guide thead th{font-weight:600;color:var(--muted);font-size:.82rem}
+.guide tbody th{font-weight:600}
+.guide tbody th a{color:var(--text);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.guide tbody tr:last-child th,.guide tbody tr:last-child td{border-bottom:0}
+.sources h2{margin:24px 0 6px;font:700 1.5rem/1.2 var(--display);letter-spacing:-.02em}
+.sources ul{margin:10px 0 0;padding-left:1.1em;display:grid;gap:10px;max-width:80ch;color:var(--muted);font-size:.95rem}
+.sources b{color:var(--text);font-weight:600}
+@media (max-width:760px){
+  .tablewrap{overflow:visible;border:0}
+  .guide table{min-width:0}
+  .guide thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .guide table,.guide tbody,.guide tr,.guide th,.guide td{display:block;width:100%}
+  .guide tr{border:1px solid var(--hairline);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+  .guide th,.guide td{border:0;padding:3px 0}
+  .guide tbody th{font-size:1.1rem;margin-bottom:6px}
+  .guide td::before{content:attr(data-col) ": ";color:var(--muted)}
+}
+
+.notyet h2{margin:24px 0 6px;font:700 1.5rem/1.2 var(--display);letter-spacing:-.02em}
+.notyet ul{margin:10px 0 0;padding-left:1.1em;display:grid;gap:10px;max-width:80ch;color:var(--muted);font-size:.95rem}
+.notyet b a{color:var(--text)}
